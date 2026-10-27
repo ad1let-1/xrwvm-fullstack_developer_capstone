@@ -1,8 +1,8 @@
-# Best Cars Dealership Review Portal
+# fullstack_developer_capstone — Best Cars Dealership Review Portal
 
-Repository: `fullstack_dealer_capstone`
+Repository: `xrwvm-fullstack_developer_capstone`
 
-Project name: **Best Cars Dealership Review Portal**
+Project name: **fullstack_developer_capstone** (Best Cars Dealership Review Portal)
 
 A full-stack capstone application for finding U.S. car dealerships, reading customer reviews, and posting a review after signing in. The `server/frontend/static` directory contains the About and Contact pages. The React registration component is in `server/frontend/src/components/Register/Register.jsx`.
 

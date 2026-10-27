@@ -41,14 +41,16 @@ DEALERS = [
      'short_name': f'{city} Auto', 'full_name': f'{city} Best Cars Dealership'}
     for i, (city, state, code) in enumerate(LOCATIONS, 1)
 ]
-CAR_MODELS = [('Mercedes-Benz', 'A-Class'), ('Mercedes-Benz', 'C-Class'),
-              ('BMW', '3 Series'), ('BMW', '5 Series'), ('Audi', 'A4'),
-              ('Audi', 'A6'), ('Toyota', 'Camry'), ('Toyota', 'Corolla'),
-              ('Honda', 'Civic'), ('Honda', 'Accord'), ('Ford', 'Mustang'),
-              ('Ford', 'F-150'), ('Tesla', 'Model 3'), ('Tesla', 'Model Y')]
+CAR_MODELS = [('NISSAN', 'Pathfinder'), ('NISSAN', 'Qashqai'),
+              ('NISSAN', 'XTRAIL'), ('Mercedes', 'A-Class'),
+              ('Mercedes', 'C-Class'), ('Mercedes', 'E-Class'),
+              ('Audi', 'A4'), ('Audi', 'A5'), ('Audi', 'A6'),
+              ('Kia', 'Sorrento'), ('Kia', 'Carnival'), ('Kia', 'Cerato'),
+              ('Toyota', 'Corolla'), ('Toyota', 'Camry'), ('Toyota', 'Kluger')]
 REVIEWS = [{'id': 1, 'name': 'Taylor Reed', 'dealership': 3,
             'review': 'Fantastic services', 'purchase': True,
-            'car_make': 'Audi', 'car_model': 'A6', 'car_year': 2023}]
+            'purchase_date': '10/27/2026', 'car_make': 'Audi',
+            'car_model': 'A6', 'car_year': 2023}]
 
 
 def home(request):

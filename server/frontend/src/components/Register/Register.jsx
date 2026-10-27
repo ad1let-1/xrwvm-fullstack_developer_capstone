@@ -15,11 +15,11 @@ export default function Register() {
   return <main className="register-page">
     <h1>Sign up for Best Cars</h1>
     <form onSubmit={submit}>
-      <label>Username<input name="userName" value={form.userName} onChange={update} required /></label>
-      <label>First Name<input name="firstName" value={form.firstName} onChange={update} required /></label>
-      <label>Last Name<input name="lastName" value={form.lastName} onChange={update} required /></label>
-      <label>Email<input name="email" type="email" value={form.email} onChange={update} required /></label>
-      <label>Password<input name="password" type="password" value={form.password} onChange={update} required minLength={8} /></label>
+      <label>Username<input name="userName" placeholder="Username" value={form.userName} onChange={update} required /></label>
+      <label>First Name<input name="firstName" placeholder="First Name" value={form.firstName} onChange={update} required /></label>
+      <label>Last Name<input name="lastName" placeholder="Last Name" value={form.lastName} onChange={update} required /></label>
+      <label>Email<input name="email" type="email" placeholder="email" value={form.email} onChange={update} required /></label>
+      <label>Password<input name="password" type="password" placeholder="Password" value={form.password} onChange={update} required minLength={8} /></label>
       <button type="submit">Register</button>
     </form>
     <p role="status">{message}</p>
