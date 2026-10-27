@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dealerships | Best Cars</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <header><nav aria-label="Main navigation"><strong>Best Cars</strong><a class="active" href="/">Dealerships</a><a href="/about">About Us</a><a href="/contact">Contact Us</a>{% if user.is_authenticated %}<span>Signed in: {{ user.username }}</span>{% else %}<a href="/admin/login/?next=/">Sign in</a>{% endif %}</nav></header>
+  <main>
+    <h1>Our National Dealership Locations</h1>
+    <p>Browse all 50 dealer locations, with their IDs, address, ZIP code and state.</p>
+    <div class="card">
+      <table>
+        <thead><tr><th>ID</th><th>Dealership name</th><th>City</th><th>Address</th><th>ZIP</th><th>State</th><th>Reviews</th></tr></thead>
+        <tbody>{% for dealer in dealers %}<tr><td>{{ dealer.id }}</td><td>{{ dealer.full_name }}</td><td>{{ dealer.city }}</td><td>{{ dealer.address }}</td><td>{{ dealer.zip }}</td><td>{{ dealer.state }}</td><td><a href="/fetchReviews/dealer/{{ dealer.id }}">View reviews</a></td></tr>{% endfor %}</tbody>
+      </table>
+    </div>
+  </main>
+  <footer>&copy; 2026 Best Cars</footer>
+</body>
+</html>

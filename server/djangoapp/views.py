@@ -4,6 +4,7 @@ from pathlib import Path
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import FileResponse, JsonResponse
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 STATIC = Path(__file__).resolve().parent.parent / 'frontend' / 'static'
@@ -54,8 +55,7 @@ REVIEWS = [{'id': 1, 'name': 'Taylor Reed', 'dealership': 3,
 
 
 def home(request):
-    return JsonResponse({'project': 'Best Cars Dealership Review Portal',
-                         'dealers': DEALERS, 'loggedIn': request.user.is_authenticated})
+    return render(request, 'home.html', {'dealers': DEALERS})
 
 
 def about(request):
