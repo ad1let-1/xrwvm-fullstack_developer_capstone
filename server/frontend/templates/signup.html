@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sign up | Best Cars</title><link rel="stylesheet" href="{% static 'style.css' %}"></head>
+<body>
+  <header><nav aria-label="Main navigation"><strong>Best Cars</strong><a href="/">Dealerships</a><a href="/about">About Us</a><a href="/contact">Contact Us</a><a class="active" href="/signup">Sign up</a></nav></header>
+  <main><div class="card form-card"><h1>Sign up for Best Cars</h1><p>Create an account to share dealership reviews.</p>
+    <form id="register-form">
+      <label>Username<input name="userName" placeholder="Username" required></label>
+      <label>First Name<input name="firstName" placeholder="First Name" required></label>
+      <label>Last Name<input name="lastName" placeholder="Last Name" required></label>
+      <label>Email<input name="email" type="email" placeholder="email" required></label>
+      <label>Password<input name="password" type="password" placeholder="Password" minlength="8" required></label>
+      <button type="submit">Register</button>
+    </form><p id="result" role="status"></p>
+  </div></main>
+  <script>
+    document.getElementById('register-form').addEventListener('submit', async function (event) {
+      event.preventDefault();
+      const values = Object.fromEntries(new FormData(event.target));
+      const response = await fetch('/djangoapp/register', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(values)});
+      const data = await response.json();
+      document.getElementById('result').textContent = response.ok ? 'Registration complete: ' + data.userName : data.error;
+    });
+  </script>
+</body>
+</html>

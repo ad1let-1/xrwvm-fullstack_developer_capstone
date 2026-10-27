@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import FileResponse, JsonResponse
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 
 STATIC = Path(__file__).resolve().parent.parent / 'frontend' / 'static'
@@ -55,7 +56,17 @@ REVIEWS = [{'id': 1, 'name': 'Taylor Reed', 'dealership': 3,
 
 
 def home(request):
-    return render(request, 'home.html', {'dealers': DEALERS})
+    return render(request, 'home.html', {'dealers': DEALERS,
+                                         'logged_out': request.GET.get('logged_out') == '1'})
+
+
+def signup(request):
+    return render(request, 'signup.html')
+
+
+def signout(request):
+    logout(request)
+    return redirect('/?logged_out=1')
 
 
 def about(request):

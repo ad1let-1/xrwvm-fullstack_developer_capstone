@@ -22,6 +22,8 @@ urlpatterns = [
     path('', views.home),
     path('about', views.about),
     path('contact', views.contact),
+    path('signup', views.signup),
+    path('signout', views.signout),
     path('admin/', admin.site.urls),
     path('djangoapp/register', views.register),
     path('djangoapp/login', views.login_user),

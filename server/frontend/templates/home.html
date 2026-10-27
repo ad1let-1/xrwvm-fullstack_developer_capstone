@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-  <header><nav aria-label="Main navigation"><strong>Best Cars</strong><a class="active" href="/">Dealerships</a><a href="/about">About Us</a><a href="/contact">Contact Us</a>{% if user.is_authenticated %}<span>Signed in: {{ user.username }}</span>{% else %}<a href="/admin/login/?next=/">Sign in</a>{% endif %}</nav></header>
+  <header><nav aria-label="Main navigation"><strong>Best Cars</strong><a class="active" href="/">Dealerships</a><a href="/about">About Us</a><a href="/contact">Contact Us</a>{% if user.is_authenticated %}<span>Signed in: {{ user.username }}</span><a href="/signout">Sign out</a>{% else %}<a href="/admin/login/?next=/">Sign in</a><a href="/signup">Sign up</a>{% endif %}</nav></header>
   <main>
+    {% if logged_out %}<div class="alert" role="alert">You have been logged out of Best Cars.</div>{% endif %}
     <h1>Our National Dealership Locations</h1>
     <p>Browse all 50 dealer locations, with their IDs, address, ZIP code and state.</p>
     <div class="card">

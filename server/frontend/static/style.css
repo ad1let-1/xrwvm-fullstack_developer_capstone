@@ -15,3 +15,8 @@ table { width: 100%; border-collapse: collapse; }
 th, td { padding: .7rem .5rem; text-align: left; border-bottom: 1px solid #d9e2ee; }
 th { background: #e8f0fa; color: #152238; }
 tr:hover td { background: #f7faff; }
+.form-card { max-width: 480px; margin: 2rem auto; }
+.form-card label { display: block; margin: 1rem 0; font-weight: bold; }
+.form-card input { display: block; width: 100%; box-sizing: border-box; margin-top: .35rem; padding: .75rem; border: 1px solid #b9c8dd; border-radius: 5px; }
+.form-card button { background: #164fa4; border: 0; color: white; padding: .75rem 1.4rem; border-radius: 5px; cursor: pointer; }
+.alert { background: #e9f8ee; border: 1px solid #61af7a; color: #14582a; padding: 1rem; margin-bottom: 1rem; border-radius: 6px; }
